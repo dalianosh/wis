@@ -6,26 +6,26 @@ export default createStore({
       username: ''
     }, 
     isAuthenticated: false,
-    token: ''
+    wistoken: ''
   },
   getters: {
   },
   mutations: {
     initializeStore(state) {
-      if(localStorage.getItem('token')) {
-        state.token = localStorage.getItem('token')
+      if(localStorage.getItem('wistoken')) {
+        state.token = localStorage.getItem('wistoken')
         state.isAuthenticated = true
       } else {
-        state.token = ''
+        state.wistoken = ''
         state.isAuthenticated = false
       }
     },
-    setToken(state, token) {
-      state.token = token
+    setToken(state, wistoken) {
+      state.wistoken = wistoken
       state.isAuthenticated = true
     },
     removeToken(state) {
-      state.token = ''
+      state.wistoken = ''
       state.isAuthenticated = false
     }
   },
